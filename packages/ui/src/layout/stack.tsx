@@ -10,9 +10,9 @@ const variants = cva('w-full flex', {
       start: 'justify-start',
       center: 'justify-center',
       end: 'justify-end',
-      between: 'jusify-between',
-      around: 'jusify-around',
-      evenly: 'jusify-evenly',
+      between: 'justify-between',
+      around: 'justify-around',
+      evenly: 'justify-evenly',
     },
     items: {
       start: 'items-start',

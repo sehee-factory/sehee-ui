@@ -15,9 +15,13 @@ const variants = cva('', {
       normal: 'font-normal',
       bold: 'font-bold',
     },
+    hover: {
+      normal: '',
+      underline: 'hover:underline cursor-pointer',
+    },
   },
 
-  defaultVariants: { size: 'md', weight: 'normal' },
+  defaultVariants: { size: 'md', weight: 'normal', hover: 'normal' },
 });
 
 type Variants = VariantProps<typeof variants>;
@@ -25,8 +29,9 @@ type Variants = VariantProps<typeof variants>;
 export const Typography = ({
   size,
   weight,
+  hover,
   className,
   ...props
 }: React.ComponentProps<'p'> & Variants) => (
-  <p {...props} className={variants({ size, weight, className })} />
+  <p {...props} className={variants({ size, weight, hover, className })} />
 );

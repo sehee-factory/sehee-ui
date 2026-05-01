@@ -1,5 +1,4 @@
 import { Button, Checkbox, Description, Input, Radio, Table, Typography } from '@sehee/ui';
-import { DescriptionComponent } from '../components/description-component';
 
 type PageConfig = {
   url: string;
@@ -70,12 +69,4 @@ export const ELEMENTS: PageConfig[] = [
     description: '설명',
     component: () => <Description>설명</Description>,
   },
-].map((element) => ({
-  ...element,
-  url: `/element/${element.url}`,
-  component: () => (
-    <DescriptionComponent componentName={element.name} descrption={element.description}>
-      {<element.component />}
-    </DescriptionComponent>
-  ),
-}));
+];

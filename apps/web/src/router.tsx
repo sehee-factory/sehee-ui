@@ -1,4 +1,5 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
+import { DescriptionComponent } from './components/description-component';
 import { ELEMENTS } from './pages/elements';
 import { Main } from './pages/main';
 
@@ -18,7 +19,19 @@ const indexRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
-  ...ELEMENTS.map((page) =>
+  ...ELEMENTS.map((element) => ({
+    ...element,
+    url: `/element/${element.url}`,
+    component: () => (
+      <DescriptionComponent
+        componentName={element.name}
+        descrption={element.description}
+        url={element.url}
+      >
+        {<element.component />}
+      </DescriptionComponent>
+    ),
+  })).map((page) =>
     createRoute({
       getParentRoute: () => rootRoute,
       path: page.url,

@@ -1,4 +1,5 @@
 import { Description, Grid, Stack, Typography } from '@sehee/ui';
+import { DescriptionComponent } from '../components/description-component';
 import { ELEMENTS } from './elements';
 
 export const Main = () => (
@@ -27,7 +28,18 @@ export const Main = () => (
         기본 태그
       </Typography>
       <Grid>
-        {ELEMENTS.map((element) => (
+        {ELEMENTS.map((element) => ({
+          ...element,
+          component: () => (
+            <DescriptionComponent
+              componentName={element.name}
+              descrption={element.description}
+              url={`/element/${element.url}`}
+            >
+              {<element.component />}
+            </DescriptionComponent>
+          ),
+        })).map((element) => (
           <div className="p-4 border border-gray-200 rounded-xl">
             <element.component key={element.name} />
           </div>
