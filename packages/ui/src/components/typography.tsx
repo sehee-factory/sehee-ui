@@ -24,7 +24,7 @@ type TypographyVariants = VariantProps<typeof variants>;
 export const Typography = ({
   size,
   weight,
-  className = 'font-',
+  className,
   ...props
 }: React.ComponentProps<'p'> & TypographyVariants) => (
   <p {...props} className={variants({ size, weight, className })} />
