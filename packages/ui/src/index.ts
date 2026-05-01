@@ -1,1 +1,1 @@
-export const check = () => console.log('check');
+export * from './components/typography';

@@ -1,17 +1,25 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsup src/index.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "@repo/ui",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
   "devDependencies": {
-    "tsup": "^8.5.1",
-    "typescript": "~6.0.3"
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1"
+  },
+  "dependencies": {
+    "tsup": "^8.5.1"
   }
 }

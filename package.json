@@ -7,9 +7,13 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "check": "pnpm lint && pnpm format:check",
-    "fix": "pnpm lint:fix && pnpm format"
+    "fix": "pnpm lint:fix && pnpm format",
+    "build:web": "pnpm --filter web build",
+    "build:ui": "pnpm --filter @repo/ui build"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
     "eslint": "^10.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
