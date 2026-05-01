@@ -1,6 +1,7 @@
-export * from './components/button';
-export * from './components/checkbox';
-export * from './components/input';
-export * from './components/radio';
-export * from './components/stack';
-export * from './components/typography';
+export * from './elements/button';
+export * from './elements/checkbox';
+export * from './elements/input';
+export * from './elements/radio';
+export * from './elements/typography';
+
+export * from './layout/stack';
