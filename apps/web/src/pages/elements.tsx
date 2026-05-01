@@ -1,4 +1,5 @@
-import { Button, Checkbox, Input, Radio, Table, Typography } from '@sehee/ui';
+import { Button, Checkbox, Description, Input, Radio, Table, Typography } from '@sehee/ui';
+import { DescriptionComponent } from '../components/description-component';
 
 type PageConfig = {
   url: string;
@@ -63,9 +64,18 @@ export const ELEMENTS: PageConfig[] = [
     description: '입력',
     component: () => <Input placeholder="입력" />,
   },
+  {
+    url: '/description',
+    name: '설명',
+    description: '설명',
+    component: () => <Description>설명</Description>,
+  },
 ].map((element) => ({
   ...element,
   url: `/element/${element.url}`,
+  component: () => (
+    <DescriptionComponent componentName={element.name} descrption={element.description}>
+      {<element.component />}
+    </DescriptionComponent>
+  ),
 }));
-
-export const PAGES: PageConfig[] = [...ELEMENTS];

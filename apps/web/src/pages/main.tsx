@@ -1,5 +1,5 @@
-import { Grid, Stack, Typography } from '@sehee/ui';
-import { ELEMENTS } from './constants';
+import { Description, Grid, Stack, Typography } from '@sehee/ui';
+import { ELEMENTS } from './elements';
 
 export const Main = () => (
   <Stack gap={8}>
@@ -15,7 +15,7 @@ export const Main = () => (
       <Typography size="2xl" weight="bold">
         시작하기
       </Typography>
-      <Typography>열 받아서 만든 위젯들이 준비 되어있습니다.</Typography>
+      <Description>이딴 거도 패키지로 배포가 된다는 사실을 아시나요</Description>
     </Stack>
     <Stack>
       <Typography size="xl" weight="bold">
@@ -28,13 +28,9 @@ export const Main = () => (
       </Typography>
       <Grid>
         {ELEMENTS.map((element) => (
-          <Stack gap={2} key={element.name} className="p-4 border border-gray-200 rounded-md">
-            <Typography size="lg" weight="bold">
-              {element.name}
-            </Typography>
-            {<element.component />}
-            <Typography size="sm">{element.description}</Typography>
-          </Stack>
+          <div className="p-4 border border-gray-200 rounded-xl">
+            <element.component key={element.name} />
+          </div>
         ))}
       </Grid>
     </Stack>

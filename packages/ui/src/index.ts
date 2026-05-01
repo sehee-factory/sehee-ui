@@ -1,5 +1,6 @@
 export * from './elements/button';
 export * from './elements/checkbox';
+export * from './elements/description';
 export * from './elements/input';
 export * from './elements/radio';
 export * from './elements/table';
