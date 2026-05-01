@@ -2,9 +2,15 @@
   "scripts": {
     "dev": "pnpm --filter web dev",
     "prepare": "husky",
-    "format": "prettier . --write"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "pnpm lint && pnpm format:check",
+    "fix": "pnpm lint:fix && pnpm format"
   },
   "devDependencies": {
+    "eslint": "^10.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3"
