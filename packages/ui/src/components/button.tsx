@@ -5,7 +5,8 @@ const variants = cva('w-full text-md px-3 py-2 flex flex-row items-center justif
   variants: {
     variant: {
       solid: 'text-white bg-black',
-      outline: 'border border-gray-200 ',
+      outline: 'border border-gray-200',
+      ghost: '',
     },
     round: {
       md: 'rounded-md',
