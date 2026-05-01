@@ -63,6 +63,9 @@ export const ELEMENTS: PageConfig[] = [
     description: '입력',
     component: () => <Input placeholder="입력" />,
   },
-];
+].map((element) => ({
+  ...element,
+  url: `/element/${element.url}`,
+}));
 
 export const PAGES: PageConfig[] = [...ELEMENTS];

@@ -1,7 +1,7 @@
 import { cn } from '../utils/cn';
 
 export const Table = (props: React.ComponentProps<'table'>) => (
-  <table {...props} className={cn('text-center', props.className)} />
+  <table {...props} className={cn('text-center w-full', props.className)} />
 );
 
 Table.Thead = (props: React.ComponentProps<'thead'>) => (
