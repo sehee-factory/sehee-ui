@@ -2,6 +2,7 @@ import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/re
 import { ButtonPage } from './pages/button';
 import { CheckboxPage } from './pages/checkbox';
 import { InputPage } from './pages/input';
+import { RadioPage } from './pages/radio';
 import { TypographyPage } from './pages/typography';
 
 const rootRoute = createRootRoute({
@@ -42,12 +43,19 @@ const checkboxRoute = createRoute({
   component: CheckboxPage,
 });
 
+const radioRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/radio',
+  component: RadioPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   typographyRoute,
   buttonRoute,
   inputRoute,
   checkboxRoute,
+  radioRoute,
 ]);
 
 export const router = createRouter({ routeTree });
