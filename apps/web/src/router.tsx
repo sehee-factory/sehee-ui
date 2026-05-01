@@ -5,7 +5,7 @@ import { Main } from './pages/main';
 
 const rootRoute = createRootRoute({
   component: () => (
-    <div className="max-w-4xl px-8 m-auto">
+    <div className="px-8 m-auto">
       <Outlet />
     </div>
   ),
