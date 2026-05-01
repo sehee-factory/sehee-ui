@@ -19,13 +19,13 @@ const variants = cva('', {
   defaultVariants: { size: 'md', weight: 'normal' },
 });
 
-type TypographyVariants = VariantProps<typeof variants>;
+type Variants = VariantProps<typeof variants>;
 
 export const Typography = ({
   size,
   weight,
   className,
   ...props
-}: React.ComponentProps<'p'> & TypographyVariants) => (
+}: React.ComponentProps<'p'> & Variants) => (
   <p {...props} className={variants({ size, weight, className })} />
 );

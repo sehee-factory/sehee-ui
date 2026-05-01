@@ -12,6 +12,6 @@ export const DescriptionComponent = ({ componentName, descrption, children }: Pr
       {componentName}
     </Typography>
     <Typography className="text-gray-400">{descrption}</Typography>
-    <div className="p-4 border border-gray-200 rounded-md">{children}</div>
+    <div className="flex flex-col gap-2 p-4 border border-gray-200 rounded-md">{children}</div>
   </div>
 );
