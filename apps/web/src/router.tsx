@@ -1,5 +1,6 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 import { ButtonPage } from './pages/button';
+import { InputPage } from './pages/input';
 import { TypographyPage } from './pages/typography';
 
 const rootRoute = createRootRoute({
@@ -28,6 +29,12 @@ const buttonRoute = createRoute({
   component: ButtonPage,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, typographyRoute, buttonRoute]);
+const inputRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/input',
+  component: InputPage,
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, typographyRoute, buttonRoute, inputRoute]);
 
 export const router = createRouter({ routeTree });
