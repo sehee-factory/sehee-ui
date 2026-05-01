@@ -4,6 +4,7 @@ import { CheckboxPage } from './pages/checkbox';
 import { InputPage } from './pages/input';
 import { Main } from './pages/main';
 import { RadioPage } from './pages/radio';
+import { TablePage } from './pages/table';
 import { TypographyPage } from './pages/typography';
 
 const rootRoute = createRootRoute({
@@ -50,6 +51,12 @@ const radioRoute = createRoute({
   component: RadioPage,
 });
 
+const tableRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/table',
+  component: TablePage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   typographyRoute,
@@ -57,6 +64,7 @@ const routeTree = rootRoute.addChildren([
   inputRoute,
   checkboxRoute,
   radioRoute,
+  tableRoute,
 ]);
 
 export const router = createRouter({ routeTree });
