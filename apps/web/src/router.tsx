@@ -2,12 +2,13 @@ import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/re
 import { ButtonPage } from './pages/button';
 import { CheckboxPage } from './pages/checkbox';
 import { InputPage } from './pages/input';
+import { Main } from './pages/main';
 import { RadioPage } from './pages/radio';
 import { TypographyPage } from './pages/typography';
 
 const rootRoute = createRootRoute({
   component: () => (
-    <div>
+    <div className="max-w-4xl px-8 m-auto">
       <Outlet />
     </div>
   ),
@@ -16,7 +17,7 @@ const rootRoute = createRootRoute({
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
-  component: () => <div>Home</div>,
+  component: () => <Main />,
 });
 
 const typographyRoute = createRoute({
