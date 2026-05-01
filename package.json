@@ -9,10 +9,10 @@
     "fix": "pnpm lint:fix && pnpm format",
     "dev": "pnpm dev:ui & pnpm dev:web",
     "dev:web": "pnpm --filter web dev",
-    "dev:ui": "pnpm --filter @repo/ui dev",
+    "dev:ui": "pnpm --filter @sehee/ui dev",
     "build": "pnpm -r build",
     "build:web": "pnpm --filter web build",
-    "build:ui": "pnpm --filter @repo/ui build"
+    "build:ui": "pnpm --filter @sehee/ui build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.59.1",

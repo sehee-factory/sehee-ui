@@ -1,5 +1,5 @@
 // router.ts
-import { Button, Typography } from '@repo/ui';
+import { Button, Typography } from '@sehee/ui';
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 
 const rootRoute = createRootRoute({
