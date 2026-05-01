@@ -1,7 +1,31 @@
+import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
 
-export const Typography = (props: React.ComponentProps<'p'>) => (
-  <p {...props} className="text-red-600">
-    TYPOGRAPHY FUCKING RED
-  </p>
+const variants = cva('', {
+  variants: {
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl',
+      '2xl': 'text-2xl',
+    },
+    weight: {
+      normal: 'font-normal',
+      bold: 'font-bold',
+    },
+  },
+
+  defaultVariants: { size: 'md', weight: 'normal' },
+});
+
+type TypographyVariants = VariantProps<typeof variants>;
+
+export const Typography = ({
+  size,
+  weight,
+  className = 'font-',
+  ...props
+}: React.ComponentProps<'p'> & TypographyVariants) => (
+  <p {...props} className={variants({ size, weight, className })} />
 );

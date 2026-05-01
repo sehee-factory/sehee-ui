@@ -1,5 +1,5 @@
 // router.ts
-import { Button, Typography } from '@sehee/ui';
+import { Typography } from '@sehee/ui';
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 
 const rootRoute = createRootRoute({
@@ -19,15 +19,20 @@ const indexRoute = createRoute({
 const typographyRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/typography',
-  component: () => <Typography>123123</Typography>,
+  component: () => (
+    <>
+      <Typography size="sm">123</Typography>
+      <Typography size="md">123</Typography>
+      <Typography size="lg">123</Typography>
+      <Typography size="xl">123</Typography>
+      <Typography size="2xl">123</Typography>
+      <Typography size="2xl" weight="bold">
+        123
+      </Typography>
+    </>
+  ),
 });
 
-const buttonRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/button',
-  component: () => <Button>About</Button>,
-});
-
-const routeTree = rootRoute.addChildren([indexRoute, typographyRoute, buttonRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, typographyRoute]);
 
 export const router = createRouter({ routeTree });
