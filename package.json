@@ -1,5 +1,17 @@
 {
   "scripts": {
-    "dev": "pnpm --filter web dev"
+    "dev": "pnpm --filter web dev",
+    "prepare": "husky",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
   }
 }
