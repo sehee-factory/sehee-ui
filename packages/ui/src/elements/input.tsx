@@ -17,6 +17,8 @@ const variants = cva(
 
 type Variants = VariantProps<typeof variants>;
 
-export const Input = ({ round, className, ...props }: React.ComponentProps<'input'> & Variants) => (
+export type InputProps = React.ComponentProps<'input'> & Variants;
+
+export const Input = ({ round, className, ...props }: InputProps) => (
   <input {...props} className={variants({ round, className })} />
 );

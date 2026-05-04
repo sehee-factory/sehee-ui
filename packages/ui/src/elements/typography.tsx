@@ -26,12 +26,8 @@ const variants = cva('', {
 
 type Variants = VariantProps<typeof variants>;
 
-export const Typography = ({
-  size,
-  weight,
-  hover,
-  className,
-  ...props
-}: React.ComponentProps<'p'> & Variants) => (
+export type TypographyProps = React.ComponentProps<'p'> & Variants;
+
+export const Typography = ({ size, weight, hover, className, ...props }: TypographyProps) => (
   <p {...props} className={variants({ size, weight, hover, className })} />
 );
