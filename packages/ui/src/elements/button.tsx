@@ -25,11 +25,12 @@ const variants = cva(
 
 type Variants = VariantProps<typeof variants>;
 
-export const Button = ({
-  className,
-  variant,
-  round,
-  ...props
-}: React.ComponentProps<'button'> & Variants) => (
-  <button {...props} className={variants({ variant, round, className })} />
+export type ButtonProps = React.ComponentProps<'button'> & Variants;
+
+export const Button = ({ className, variant, round, ...props }: ButtonProps) => (
+  <button
+    {...props}
+    className={variants({ variant, round, className })}
+    type={props.type ?? 'button'}
+  />
 );

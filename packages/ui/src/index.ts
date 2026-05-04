@@ -1,3 +1,4 @@
+export * from './components/tabs';
 export * from './components/toggle';
 
 export * from './elements/button';
