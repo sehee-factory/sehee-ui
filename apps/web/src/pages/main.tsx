@@ -1,5 +1,6 @@
 import { Description, Grid, Stack, Typography } from '@sehee/ui';
 import { DescriptionComponent } from '../components/description-component';
+import { COMPONENTS } from './components';
 import { ELEMENTS } from './elements';
 
 export const Main = () => (
@@ -50,6 +51,24 @@ export const Main = () => (
       <Typography size="xl" weight="bold">
         위젯
       </Typography>
+      <Grid>
+        {COMPONENTS.map((component) => ({
+          ...component,
+          component: () => (
+            <DescriptionComponent
+              componentName={component.name}
+              descrption={component.description}
+              url={`/component/${component.url}`}
+            >
+              {<component.component />}
+            </DescriptionComponent>
+          ),
+        })).map((component) => (
+          <div className="p-4 border border-gray-200 rounded-xl">
+            <component.component key={component.name} />
+          </div>
+        ))}
+      </Grid>
     </Stack>
   </Stack>
 );

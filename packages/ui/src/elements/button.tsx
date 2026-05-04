@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
 
 const variants = cva(
-  'w-full text-md px-3 py-2 flex flex-row items-center justify-center text-sm font-medium',
+  'w-full text-md px-3 py-2 flex flex-row items-center justify-center text-sm font-medium cursor-pointer',
   {
     variants: {
       variant: {

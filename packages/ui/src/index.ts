@@ -1,3 +1,5 @@
+export * from './components/toggle';
+
 export * from './elements/button';
 export * from './elements/checkbox';
 export * from './elements/description';

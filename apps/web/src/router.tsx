@@ -1,5 +1,6 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 import { DescriptionComponent } from './components/description-component';
+import { COMPONENTS } from './pages/components';
 import { ELEMENTS } from './pages/elements';
 import { Main } from './pages/main';
 
@@ -29,6 +30,25 @@ const routeTree = rootRoute.addChildren([
         url={element.url}
       >
         {<element.component />}
+      </DescriptionComponent>
+    ),
+  })).map((page) =>
+    createRoute({
+      getParentRoute: () => rootRoute,
+      path: page.url,
+      component: page.component,
+    }),
+  ),
+  ...COMPONENTS.map((component) => ({
+    ...component,
+    url: `/component/${component.url}`,
+    component: () => (
+      <DescriptionComponent
+        componentName={component.name}
+        descrption={component.description}
+        url={component.url}
+      >
+        {<component.component />}
       </DescriptionComponent>
     ),
   })).map((page) =>
